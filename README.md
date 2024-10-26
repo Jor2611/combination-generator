@@ -30,8 +30,8 @@
 Before running this application, you need to have one of the following setups:
 
 1. MySQL and NestJS:
-   - [MySQL](https://dev.mysql.com/downloads/mysql/) (version 8.0 or later)
-   - [Node.js](https://nodejs.org/) (version 14 or later)
+   - [MySQL](https://dev.mysql.com/downloads/mysql/)
+   - [Node.js](https://nodejs.org/) (version 20 or later)
    - [NestJS CLI](https://docs.nestjs.com/cli/overview) (`npm i -g @nestjs/cli`)
 
 2. Docker with Docker Compose:
