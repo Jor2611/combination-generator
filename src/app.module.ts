@@ -1,10 +1,11 @@
-import { Module } from '@nestjs/common';
+import { Module, ValidationPipe } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import * as mysql from 'mysql2/promise';
 import { DatabaseInitService } from './database-init.service';
 import { DatabaseSeedService } from './database-seed.servcie';
+import { APP_PIPE } from '@nestjs/core';
 
 @Module({
   imports: [
@@ -16,6 +17,10 @@ import { DatabaseSeedService } from './database-seed.servcie';
   controllers: [AppController],
   providers: [
     AppService,
+    {
+      provide: APP_PIPE,
+      useFactory: () => new ValidationPipe({ whitelist: true })
+    },
     DatabaseInitService,
     DatabaseSeedService,
     {
